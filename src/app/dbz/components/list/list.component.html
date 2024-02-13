@@ -1,0 +1,44 @@
+<!--  h4 para crear el titulo -->
+<h4>Listado</h4>
+
+<!-- ul crea un order list -->
+<ul class="list-group">
+    <!-- la clase list-group crea el contenedor de tabla -->
+    <!-- li crea un list item -->
+    <!-- la clase list-group-item crea las filas donde van los items -->
+
+    <!-- con el ngFor damos el template  -->
+    <li
+        *ngFor="
+            let character of CharacterList;
+            let i = index;
+            let isFirst = first;
+            let isLast = last;
+            let isEven = even;
+            let isOdd = odd
+        "
+
+        
+        class="list-group-item d-flex justify-content-between aling-items-center"
+        [ngClass]="{
+    'list-group-item-dark': isLast,
+    'list-group-item-primary': isEven,
+    }"
+    >
+        <div>
+            <span class="text-primary"> {{ i + 1 }}.</span>
+            <span>{{ character.name }} - </span>
+            <strong>Power:</strong>
+            <span>{{ character.power }}</span>
+        </div>
+
+        <button (click)="onDeletCharacter(character.id!)" class="btn btn-danger">X</button>
+    </li>
+</ul>
+
+<!-- este componente fue creado por comando ng g component nombre del componente -->
+
+<!-- list-group-item d-flex justify-content-between aling-items-center esta parte alinea 
+
+y centra el boton de eliminar y el comtenido de los item
+-->

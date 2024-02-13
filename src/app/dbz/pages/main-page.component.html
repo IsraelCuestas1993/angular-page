@@ -1,0 +1,29 @@
+<h1>Dbz personajes</h1>
+<!-- hr muestra una linea horizontal bajo el titulo -->
+<hr />
+<!-- .row para crear un div que contendra la columnas -->
+<div class="row"></div>
+<!--  .col para crear un div con class col para las columnas -->
+<div class="col"></div>
+
+<div class="row">
+  <div class="col">
+    <dbz-list
+      [CharacterList]="characters"
+      (onDelete)="onDeleteCharacter($event)"
+    ></dbz-list>
+  </div>
+  <div class="col">
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)">
+    </dbz-add-character>
+
+    <h1>prueba</h1>
+
+    <!--  {{characters | json}} -->
+  </div>
+</div>
+
+
+<!--
+  parentecis son eventos () y llavez [] son atributos
+ -->

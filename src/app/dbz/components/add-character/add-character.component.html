@@ -1,0 +1,32 @@
+<!-- Crea el titulo h4 -->
+<h4>Agregar personaje</h4>
+
+<!-- el formulario crea el formulario form -->
+
+    <form class="row" (ngSubmit)="emitCharacter()">
+
+        <!-- el input crea el campo para escribir type text y placeholder el textodentro -->
+        <!-- el ngmodel  -->
+      <input type="text" 
+      [(ngModel)] ="character.name" 
+      name="name"
+      class="form-control mb-2 " 
+      placeholder="Nombre">
+          <!-- la clase form-control margin borde (mb)-2 da mejor aparienci   -->
+      <input type="number" 
+      [(ngModel)] ="character.power"
+      name="power" 
+      class="form-control mb-2" 
+      placeholder="Poder">
+
+      <!-- el button crea un boton con la clase submit de enviar -->
+      <!-- la clase crea el tipo de boton btn btn primary -->
+
+      <button type="submit" class="btn btn-primary" >
+        Agregar
+      </button>
+
+<!--       <pre> {{character | json}}</pre> -->
+
+     
+    </form>
